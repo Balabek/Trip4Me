@@ -1,0 +1,765 @@
+/*
+
+▀▀█▀▀ █▀▀█ ░▀░ █▀▀█ ░█▀█░ █▀▄▀█ █▀▀ 　 ▒█▀▀█ ▒█▀▀▀█ ▒█▀▀▀█
+░░█░░ █▄▄▀ ▀█▀ █░░█ █▄▄█▄ █░▀░█ █▀▀ 　 ▒█░░░ ░▀▀▀▄▄ ░▀▀▀▄▄
+░░▀░░ ▀░▀▀ ▀▀▀ █▀▀▀ ░░░█░ ▀░░░▀ ▀▀▀ 　 ▒█▄▄█ ▒█▄▄▄█ ▒█▄▄▄█
+
+*/
+
+
+/* =========== GENERAL =========== */
+
+/** {*/
+    /*box-sizing: content-box;*/
+/*}*/
+
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    font-family: "ProximaNova-Regular", sans-serif;
+    font-size: 14px;
+    height: 100%;
+    max-width: 100%;
+}
+
+.main {
+    width: 100%;
+    /*overflow-x: hidden;*/
+}
+
+a:focus, button:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+    border-color: transparent;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.001) inset, 0 0 1px rgba(255, 255, 255, 0.1);
+    outline: 0 none;
+}
+
+
+
+/* ============ NAVBAR =========== */
+
+nav.navbar.navbar-default.trip4me_navbar {
+    position: absolute;
+    height: 99px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index: 200;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.1) !important;
+    border-radius: 0;
+    border-right: hidden;
+    border-left: hidden;
+}
+
+
+a.navbar-brand.trip4me_brand {
+    width: 15%;
+    margin-left: 12px;
+}
+
+img.main_logo {
+    width: 200px;
+}
+
+.navbar-toggle {
+    margin-top: 33px;
+    border: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.navbar-default .navbar-toggle:hover .icon-bar {background-color: #ff771c;}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {background: transparent;}
+
+
+ul.trip4me_navlinx {
+    margin-right: 12px;
+    position: relative;
+    top: 40px;
+}
+
+ul.trip4me_navlinx li {
+    margin-right: 50px;
+}
+
+ul.trip4me_navlinx li:last-child {
+    margin-right: 0;
+}
+
+ul.trip4me_navlinx > li> a {
+    color: #ffffff !important;
+
+    overflow: hidden;
+    padding: 0 4px;
+    height: 1.2em;
+}
+
+ul.trip4me_navlinx > li > a span {
+    position: relative;
+    display: inline-block;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+ul.trip4me_navlinx > li > a span::before {
+    position: absolute;
+    top: 100%;
+    content: attr(data-hover);
+    font-weight: 700;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    color: #ff771c;
+}
+
+ul.trip4me_navlinx > li > a:hover span,
+ul.trip4me_navlinx > li > a:focus span {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+
+/* ============ HEADER =========== */
+
+.trip4me_header {
+    min-height: 688px;
+    height: auto;
+    position: relative;
+    background: url('../img/mainbdg_001.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.h_banner {
+    position: absolute;
+    margin-top: 40%;
+    padding-left: 2px;
+    width: 100%;
+}
+
+.h_banner h1 {
+    font-family: "ProximaNova-Bold", sans-serif;
+    font-size: 48px;
+    text-align: left;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.h_banner h5 {
+    font-family: "ProximaNova-Regular", sans-serif;
+    font-size: 24px;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.app_store_linx_holder {
+    display: block;
+}
+
+a.storelink {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    height: 55px;
+    width: 28%;
+}
+
+a.storelink.appstore {
+    background: url("../img/AppleAppStore_btn_bgd.png") center center no-repeat;
+    background-size: contain;
+}
+
+a.storelink.playstore {
+    background: url("../img/GooglePlay_btn_bgd.png") center center no-repeat;
+    background-size: contain;
+}
+
+.two_phones_holder {
+    position: relative;
+    top: 175px;
+
+}
+
+
+.two_phones {
+    position: absolute;
+    right: 0;
+    top: 27%;
+    display: block;
+    height: 600px;
+    width: 400px;
+    overflow: hidden;
+    background: url('../img/two_phones.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+
+
+/* ============ SUMMARY =========== */
+
+.summary_area_skewed {
+    margin-top: -3%;
+    min-height: 603px;
+    height: auto;
+    background: #ffffff;
+
+    -webkit-transform: skewY(2deg);
+    -moz-transform: skewY(2deg);
+    -ms-transform: skewY(2deg);
+    -o-transform: skewY(2deg);
+    transform: skewY(2deg);
+
+    padding-bottom: 65px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+.summary_area_str8 {
+    padding-top: 85px;
+
+    -webkit-transform: skewY(-2deg);
+    -moz-transform: skewY(-2deg);
+    -ms-transform: skewY(-2deg);
+    -o-transform: skewY(-2deg);
+    transform: skewY(-2deg);
+
+    padding-bottom: 25px;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility:     hidden;
+    -moz-backface-visibility:    hidden;
+    backface-visibility:         hidden;
+    outline: 1px solid transparent;
+}
+
+
+h3.main_ttl {
+    font-family: "ProximaNova-Bold", sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.summary_points_holder {
+    padding-top: 100px;
+}
+
+
+.summaryicon {
+    display: inline-block;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.summaryicon.wifi {background: url('../img/icon_wifi.png') center center no-repeat;background-size: contain;}
+.summaryicon.radioguide {background: url('../img/icon_walkietalkie.png') center center no-repeat;background-size: contain;}
+.summaryicon.smartphone {background: url('../img/icon_phone_with_headphones.png') center center no-repeat;background-size: contain;}
+.summaryicon.easytouse {background: url('../img/icon_gear.png') center center no-repeat;background-size: contain;}
+
+.summarybox h5 {
+    font-family: "ProximaNova-Bold", sans-serif;
+    color: #000000;
+    font-size: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.summarybox p {
+    font-family: "ProximaNova-Regular", sans-serif;
+    font-size: 14px;
+    color: #363636;
+    min-height: 150px;
+    height: auto;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* ============ HOW IT WORKS =========== */
+
+.howitworks_area {
+    min-height: 820px;
+    height: auto;
+    background: #f6f6f6;
+    margin-top: -3%;
+}
+
+.equilizer {
+    height: 100px;
+    background: #ffffff;
+}
+
+.ttl_holder {
+    padding-top: 65px;
+}
+
+.check_bullet_points_holder {
+    padding-top: 35px;
+}
+
+.bulletpoint {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.check {
+    display: block;
+    height: 21px;
+    width: 21px;
+    float: left;
+    margin-right: 8px;
+}
+
+.check.orange {background: url('../img/check_orange.png') center center no-repeat; background-size: contain;}
+.check.green {background: url('../img/check_green.png') center center no-repeat; background-size: contain;}
+
+.bulletpoint p {
+    font-family: "ProximaNova-Semibold", sans-serif;
+    font-size: 18px;
+    color: #363636;
+    text-align: left;
+}
+
+.three_circles_holder {
+    padding-top: 55px;
+}
+
+.howitworks_circle_one {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 175px;
+    background: url('../img/howitworks_circle_plus.png') center center no-repeat;
+    background-size: contain;
+}
+
+.howitworks_circle_two {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 175px;
+    background: url('../img/howitworks_circle_equals.png') center center no-repeat;
+    background-size: contain;
+}
+
+.howitworks_cloud_result {
+    display: block;
+    height: 350px;
+    background: url('../img/howitworks_result.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+.howitworks_circle_one_2 {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 175px;
+    background: url('../img/howitworks_circle_plus_2.png') center center no-repeat;
+    background-size: contain;
+}
+
+.howitworks_circle_two_2 {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 175px;
+    background: url('../img/howitworks_circle_equals_2.png') center center no-repeat;
+    background-size: contain;
+}
+
+.howitworks_cloud_result_2 {
+    display: block;
+    height: 350px;
+    background: url('../img/howitworks_result_2.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+.free_pocket_wifi_pic {
+    display: block;
+    height: 350px;
+    background: url('../img/illustration1@2x.png') center center no-repeat;
+    background-size: contain;
+}
+
+.get_rid_of_old_radio_pic {
+    display: block;
+    height: 350px;
+    background: url('../img/illustration2@2x.png') center center no-repeat;
+    background-size: contain;
+}
+
+.never_lose_your_grip_pic {
+    display: block;
+    height: 350px;
+    background: url('../img/illustration3@2x.png') center center no-repeat;
+    background-size: contain;
+}
+
+.find_nearby_places_pic {
+    display: block;
+    height: 350px;
+    background: url('../img/illustration4@2x.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+/* ============ ADVANTAGES =========== */
+
+.advantages_area {
+    min-height: 740px;
+    height: auto;
+    background: #ffffff;
+}
+
+
+.advantages_circle_one {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 214px;
+    background: url('../img/advantages_circle_plus.png') center center no-repeat;
+    background-size: contain;
+}
+
+.advantages_circle_two {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 214px;
+    background: url('../img/advantages_circle_equals.png') center center no-repeat;
+    background-size: contain;
+}
+
+.advantages_cloud_result {
+    display: block;
+    height: 350px;
+    background: url('../img/advantages_result.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+.advantages_circle_one_2 {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 214px;
+    background: url('../img/advantages_circle_plus_2.png') center center no-repeat;
+    background-size: contain;
+}
+
+.advantages_circle_two_2 {
+    position: relative;
+    top: 90px;
+    display: block;
+    height: 214px;
+    background: url('../img/advantages_circle_equals_2.png') center center no-repeat;
+    background-size: contain;
+}
+
+.advantages_cloud_result_2 {
+    display: block;
+    height: 350px;
+    background: url('../img/advantages_result_2.png') center center no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+
+.check_bullet_points_holder_2 {
+    display: block;
+    width: 44%;
+    margin: 0 auto;
+    padding-top: 24px;
+}
+
+.bulletpoint_2 {
+    display: block;
+    margin-right: 30px;
+}
+
+.bulletpoint_2 p {
+    font-family: "ProximaNova-Semibold", sans-serif;
+    font-size: 18px;
+    color: #363636;
+    text-align: left;
+}
+
+
+
+
+
+
+/* ============ CONTACT =========== */
+
+.contact_area {
+    min-height: 670px;
+    height: auto;
+    background: url('../img/cartoon_sky_bgd.jpg') center center no-repeat;
+    background-size: cover;
+    padding-top: 25px;
+}
+
+p.contact_subttl {
+    font-family: "ProximaNova-Regular", sans-serif;
+    font-size: 18px;
+    color: #363636;
+    text-align: center;
+}
+
+.contact_form_holder {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 32px;
+}
+
+.trip_4_me_form {
+    padding-top: 24px;
+}
+
+label.t4m_lbl {
+    font-family: "ProximaNova-Light", sans-serif;
+    font-size: 14px;
+    text-align: left;
+    color: #000000;
+    margin-bottom: 1px;
+}
+
+label.t4m_lbl span {
+    font-size: 20px;
+    color: #ff771c;
+}
+
+input.t4m_input {
+    font-family: "ProximaNova-Light", sans-serif;
+    height: 40px;
+    background: #ffffff;
+    border: 1px solid #b7b7b7;
+    padding-left: 12px;
+    font-size: 15px;
+    color: #363636;
+    outline: none;
+    box-shadow: none;
+}
+
+input.t4m_input:focus {
+    border: 1px solid #b7b7b7;
+}
+
+
+textarea.t4m_txtbox {
+    font-family: "ProximaNova-Light", sans-serif;
+    height: 200px;
+    background: #ffffff;
+    border: 1px solid #b7b7b7;
+    padding-left: 12px;
+    padding-top: 8px;
+    font-size: 15px;
+    color: #363636;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+}
+
+textarea.t4m_txtbox:focus {
+    border: 1px solid #b7b7b7;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.submit_btn_holder {
+    text-align: center;
+    padding-top: 28%;
+}
+
+button.submit_form_btn {
+    font-family: "ProximaNova-Bold", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #ff771c;
+    color: #ffffff;
+    width: 20%;
+    height: 45px;
+
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -ms-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+}
+
+button.submit_form_btn:hover {
+    background: #17667b;
+    color: #ffffff;
+}
+
+
+
+
+
+
+/* ============ PRE-FOOTER =========== */
+
+.pre_footer_area {
+    min-height: 220px;
+    height: auto;
+    background: #ffffff;
+}
+
+.prefooterlogo {
+    width: 15%;
+}
+
+.prefooter_appstore_links_holder {
+    padding-top: 20px;
+}
+
+a.storelink_prefooter {
+    display: inline-block;
+    margin-right: 10px;
+    height: 55px;
+    width: 14%;
+}
+
+a.storelink_prefooter.appstore {
+    background: url("../img/AppleAppStore_btn_bgd.png") center center no-repeat;
+    background-size: contain;
+}
+
+a.storelink_prefooter.playstore {
+    background: url("../img/GooglePlay_btn_bgd.png") center center no-repeat;
+    background-size: contain;
+}
+
+
+
+
+/* ============ FOOTER =========== */
+
+.firenze_skyline {
+    height: 220px;
+    width: 100%;
+    background: url('../img/Group.png') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 2px;
+}
+
+footer.t4m_footer {
+    min-height: 50px;
+    padding-top: 16px;
+    height: auto;
+    background: #252525;
+}
+
+.footer_notes {
+    padding-left: 0;
+}
+
+.footer_notes small {
+    font-family: "ProximaNova-Light", sans-serif;
+    color: #ffffff;
+    text-align: left;
+    font-size: 12px;
+}
+
+.footer_notes small span {color: #ff771c;}
+
+.footer_socialz {
+    position: relative;
+    top: -3px;
+}
+
+.footer_linxx a {
+    font-family: "ProximaNova-Light", sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.footer_linxx a:hover {
+    color: #ff771c;
+}
+
+ul.socialz li {
+    float: left;
+    list-style-type: none;
+    margin-right: 18px;
+}
+
+ul.socialz li a {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+a.footersocial.facebook {background: url('../img/facebook-logo-button.png') center center no-repeat; background-size: contain;}
+a.footersocial.youtube {background: url('../img/youtube-logotype.png') center center no-repeat; background-size: contain;}
+a.footersocial.instagram {background: url('../img/instagram-logo.png') center center no-repeat; background-size: contain;}
+
+
+
+
+
+
+
